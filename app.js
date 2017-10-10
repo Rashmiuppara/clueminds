@@ -29,16 +29,20 @@ app.set('view engine', 'html');
 
 
 //var configDB = require('./config/database.js');
-var configDB = '127.0.0.1:27017/' + process.env.OPENSHIFT_APP_NAME;
+//comment because database is not running 
+//var configDB = '127.0.0.1:27017/' + process.env.OPENSHIFT_APP_NAME;
 // if OPENSHIFT env variables are present, use the available connection info:
+/*
 if (process.env.OPENSHIFT_MONGODB_DB_URL) {
     //console.log("mongodb connect url check")
     configDB = process.env.OPENSHIFT_MONGODB_DB_URL +
     process.env.OPENSHIFT_APP_NAME;
 }
-console.log("database =", configDB);
+console.log("database =", configDB); */
+
 //mongoose.connect(configDB);
 // Connect to mongodb
+/*
 var connect = function () {
     mongoose.connect(configDB);
 };
@@ -51,7 +55,7 @@ db.on('error', function(error){
 });
 
 db.on('disconnected', connect);
-
+*/
 app.use('/', routes);
 
 
